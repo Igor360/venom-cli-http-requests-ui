@@ -7,7 +7,7 @@
   "__Type__": "Map",
   "venom.datetime": "2022-09-30T23:09:02+03:00",
   "venom.testcase": "Test-registration",
-  "venom.testsuite": "Auth tests",
+  "venom.testsuite": "Auth tests2",
   "venom.testsuite.filename": "tests/api/api.yml",
   "venom.testsuite.shortName": "Auth tests",
   "venom.testsuite.workdir": "/home/igor/GolandProjects/playch-gateway/tests/api",

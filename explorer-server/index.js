@@ -16,6 +16,18 @@ app.use(function (req, res, next) {
 app.use('/api', router);
 
 
+const groupBy = (array, key) => {
+    // Return the end result
+    return array.reduce((result, currentValue) => {
+        // If an array already present for key, push it to the array. Else create an array and push the object
+        (result[currentValue[key]] = result[currentValue[key]] || []).push(
+            currentValue
+        );
+        // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+        return result;
+    }, {}); // empty object is the initial value for result object
+};
+
 function getData() {
     let api = [];
     const baseDir = __dirname + "/../public/result/";
@@ -29,21 +41,39 @@ function getData() {
 }
 
 function filterData(api) {
-    let filteredData = {raw: api};
+
+    // Filter data
+    let filteredData = {};
     api.forEach(element => {
         let testSuite = filteredData[element.variables['venom.testsuite']] || [];
-        testSuite[element.step.url] = testSuite[element.step.url] || [];
-        testSuite[element.step.url].push({
-            [element.step.method]:
-                {
-                    result: element.result, name: element.variables["venom.testcase"],
-                    info: element.step.info || ""
-                }
+        testSuite.push({
+            url: element.step.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, ""),
+            method: element.step.method,
+            result: element.result, name: element.variables["venom.testcase"],
+            info: element.step.info || ""
         });
         filteredData[element.variables['venom.testsuite']] = testSuite;
     })
 
-    return filteredData;
+    /// Group data by URLS
+    let groupedData = {};
+    Object.entries(filteredData).forEach((element) => {
+        let testSuite = groupedData[element[0]] || [];
+        testSuite.push(groupBy(filteredData[element[0]], "url"))
+        groupedData[element[0]] = testSuite;
+    });
+
+    // Group data by Methods
+    Object.entries(groupedData).forEach((element) => {
+        let testSuite = groupedData[element[0]] || [];
+        Object.entries(testSuite[0]).forEach(element2 => {
+            testSuite[0][element2[0]] = groupBy(testSuite[0][element2[0]], "method");
+        })
+        groupedData[element[0]] = testSuite;
+    });
+
+    let result = {raw: api, data: groupedData};
+    return result;
 }
 
 router.get('/venom/results', async function (req, res, next) {
