@@ -29,18 +29,20 @@ function getData() {
 }
 
 function filterData(api) {
-    let filteredData = {raw: api, data : []};
+    let filteredData = {raw: api};
     api.forEach(element => {
-        let testSuite = filteredData[element.variables['venom.testsuite']];
-        testSuite.set(element.step.url, {
-                [element.step.method]:
-                    {
-                        result: element.result, name: element.variables["venom.testcase"],
-                        info: element.step.info || ""
-                    }
-            })
+        let testSuite = filteredData[element.variables['venom.testsuite']] || [];
+        testSuite[element.step.url] = testSuite[element.step.url] || [];
+        testSuite[element.step.url].push({
+            [element.step.method]:
+                {
+                    result: element.result, name: element.variables["venom.testcase"],
+                    info: element.step.info || ""
+                }
+        });
         filteredData[element.variables['venom.testsuite']] = testSuite;
     })
+
     return filteredData;
 }
 
