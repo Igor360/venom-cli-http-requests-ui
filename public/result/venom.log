@@ -1,0 +1,107 @@
+Oct  1 02:29:52.972[37m [DEBU] [0moption format=
+Oct  1 02:29:52.972[37m [DEBU] [0moption libDir=
+Oct  1 02:29:52.972[37m [DEBU] [0moption outputDir=./tests/api/result
+Oct  1 02:29:52.972[37m [DEBU] [0moption stopOnFailure=false
+Oct  1 02:29:52.972[37m [DEBU] [0moption variables=
+Oct  1 02:29:52.972[37m [DEBU] [0moption varFiles=
+Oct  1 02:29:52.972[37m [DEBU] [0moption verbose=2
+Oct  1 02:29:52.972[36m [INFO] [0mReading tests/api/api.yml
+Oct  1 02:29:52.973[36m [INFO] [0mParsing testsuite tests/api/api.yml : map[:{"API_VER":"v1","AUTH_STORAGE_DNS":"postgresql://postgres:postgres@localhost:49154/auth_db","URL":"http://127.0.0.1:9091"} API_VER:v1 AUTH_STORAGE_DNS:postgresql://postgres:postgres@localhost:49154/auth_db URL:http://127.0.0.1:9091 __Len__:3 __Type__:Map venom.datetime:2022-10-01T02:29:52+03:00 venom.testsuite:Auth tests venom.testsuite.filename:tests/api/api.yml venom.testsuite.shortName:Auth tests venom.testsuite.workdir:/home/igor/GolandProjects/playch-gateway/tests/api venom.timestamp:1664580592]
+Oct  1 02:29:52.984[37m [DEBU] [0mTestsuite (tests/api/api.yml) variables: map[:{"API_VER":"v1","AUTH_STORAGE_DNS":"postgresql://postgres:postgres@localhost:49154/auth_db","URL":"http://127.0.0.1:9091"} API_VER:v1 AUTH_STORAGE_DNS:postgresql://postgres:postgres@localhost:49154/auth_db URL:http://127.0.0.1:9091 __Len__:3 __Type__:Map venom.datetime:2022-10-01T02:29:52+03:00 venom.testsuite:Auth tests venom.testsuite.filename:tests/api/api.yml venom.testsuite.shortName:Auth tests venom.testsuite.workdir:/home/igor/GolandProjects/playch-gateway/tests/api venom.timestamp:1664580592]
+Oct  1 02:29:52.984[37m [DEBU] [0mnb testsuites: 1
+Oct  1 02:29:52.984[36m [INFO] [Auth tests] [0mStarting testsuite
+Oct  1 02:29:52.984[36m [INFO] [Auth tests] [Authentification-Test-registration] [0mStarting testcase
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.testcase: Authentification-Test-registration
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.testsuite.workdir: /home/igor/GolandProjects/playch-gateway/tests/api
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.timestamp: 1664580592
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable __Len__: 11
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.datetime: 2022-10-01T02:29:52+03:00
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.testsuite.shortName: Auth tests
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.testsuite: Auth tests
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable AUTH_STORAGE_DNS: postgresql://postgres:postgres@localhost:49154/auth_db
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable URL: http://127.0.0.1:9091
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable venom.testsuite.filename: tests/api/api.yml
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable __Type__: Map
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable API_VER: v1
+Oct  1 02:29:52.984[37m [DEBU] [Auth tests] [Authentification-Test-registration] [0mRunning testcase with variable : {"":"{\"API_VER\":\"v1\",\"AUTH_STORAGE_DNS\":\"postgresql://postgres:postgres@localhost:49154/auth_db\",\"URL\":\"http://127.0.0.1:9091\"}","API_VER":"v1","AUTH_STORAGE_DNS":"postgresql://postgres:postgres@localhost:49154/auth_db","URL":"http://127.0.0.1:9091","__Len__":"3","__Type__":"Map","venom.datetime":"2022-10-01T02:29:52+03:00","venom.testsuite":"Auth tests","venom.testsuite.filename":"tests/api/api.yml","venom.testsuite.shortName":"Auth tests","venom.testsuite.workdir":"/home/igor/GolandProjects/playch-gateway/tests/api","venom.timestamp":"1664580592"}
+Oct  1 02:29:52.985[36m [INFO] [Auth tests] [Authentification-Test-registration] [0mStep #0 content is: "{\"assertions\":[\"result.statuscode ShouldEqual 400\"],\"bodyFile\":\"./http/register.json\",\"headers\":{\"Content-Type\":\"application/json\"},\"info\":\"request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}\",\"method\":\"POST\",\"type\":\"http\",\"url\":\"http://127.0.0.1:9091/api/v1/registration\"}"
+Oct  1 02:29:52.987[37m [DEBU] [Auth tests] [Authentification-Test-registration] [http] [0mresult of runTestStepExecutor: {TimeSeconds:0.001266023 StatusCode:400 Request:{Method:POST URL:http://127.0.0.1:9091/api/v1/registration Header:map[Content-Type:[application/json]] Body:{
+  "password": "1234",
+  "firstName": "test",
+  "lastName": "tester",
+  "email": "tester@mail.com",
+  "username": "tester1"
+}
+ Form:map[] PostForm:map[]} Body:{"error":"connection error: desc = \"transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving\""} BodyJSON:map[error:connection error: desc = "transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving"] Headers:map[Content-Length:138 Content-Type:application/json; charset=utf-8 Date:Fri, 30 Sep 2022 23:29:52 GMT] Err:}
+Oct  1 02:29:52.987[36m [INFO] [Auth tests] [Authentification-Test-registration] [http] [0mrequest is POST http://127.0.0.1:9091/api/v1/registration {
+  "password": "1234",
+  "firstName": "test",
+  "lastName": "tester",
+  "email": "tester@mail.com",
+  "username": "tester1"
+}
+ (tests/api/api.yml:16) (tests/api/api.yml:16)
+Oct  1 02:29:52.989[36m [INFO] [Auth tests] [Authentification-Test-registration] [0mStep #1 content is: "{\"assertions\":[\"result.statuscode ShouldEqual 400\"],\"headers\":{\"Content-Type\":\"application/json\"},\"info\":\"request is POST http://127.0.0.1:9091/api/v1/registration {\n  \\\"password\\\": \\\"1234\\\",\n  \\\"firstName\\\": \\\"test\\\",\n  \\\"lastName\\\": \\\"tester\\\",\n  \\\"email\\\": \\\"tester@mail.com\\\",\n  \\\"username\\\": \\\"tester1\\\"\n}\n\",\"method\":\"POST\",\"type\":\"http\",\"url\":\"http://127.0.0.1:9091/api/v1/login\"}"
+Oct  1 02:29:52.989[37m [DEBU] [Auth tests] [Authentification-Test-registration] [http] [0mresult of runTestStepExecutor: {TimeSeconds:0.000378614 StatusCode:400 Request:{Method:POST URL:http://127.0.0.1:9091/api/v1/login Header:map[Content-Type:[application/json]] Body: Form:map[] PostForm:map[]} Body:{"error":"EOF"} BodyJSON:map[error:EOF] Headers:map[Content-Length:15 Content-Type:application/json; charset=utf-8 Date:Fri, 30 Sep 2022 23:29:52 GMT] Err:}
+Oct  1 02:29:52.990[36m [INFO] [Auth tests] [Authentification-Test-registration] [http] [0mrequest is POST http://127.0.0.1:9091/api/v1/registration { "password": "1234", "firstName": "test", "lastName": "tester", "email": "tester@mail.com", "username": "tester1" }  (tests/api/api.yml:26) (tests/api/api.yml:26)
+Oct  1 02:29:52.990[36m [INFO] [Auth tests] [Authentification-Test-registration] [0mStep #2 content is: "{\"commands\":[\"SELECT * FROM\"],\"dns\":\"postgresql://postgres:postgres@localhost:49154/auth_db\",\"driver\":\"postgres\",\"info\":\"check is data added to database for registration action\",\"type\":\"sql\"}"
+Oct  1 02:29:52.991[37m [DEBU] [Auth tests] [Authentification-Test-registration] [sql] [0mconnecting to database postgres, 
+
+Oct  1 02:29:52.994[33m [WARN] [Auth tests] [Authentification-Test-registration] [0m[33mTestcase "Authentification - Test registration", step #2: failed to connect to database: dial tcp 127.0.0.1:5432: connect: connection refused (tests/api/api.yml:30)[0m
+Oct  1 02:29:52.994[36m [INFO] [Auth tests] [Authentification-Test-registration] [0mEnding testcase
+Oct  1 02:29:52.994[36m [INFO] [Auth tests] [Test-login] [0mStarting testcase
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.testsuite.filename: tests/api/api.yml
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.testsuite: Auth tests
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable AUTH_STORAGE_DNS: postgresql://postgres:postgres@localhost:49154/auth_db
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request: {Method:POST URL:http://127.0.0.1:9091/api/v1/login Header:map[Content-Type:[application/json]] Body: Form:map[] PostForm:map[]}
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable __Type__: Map
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.postform.__len__: 0
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers.content-type: application/json; charset=utf-8
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.content-type.__len__: 1
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.url: http://127.0.0.1:9091/api/v1/login
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.method: POST
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header: map[Content-Type:[application/json]]
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.content-type.__type__: Array
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.bodyjson.__type__: Map
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.bodyjson.error: EOF
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.bodyjson: map[error:EOF]
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable API_VER: v1
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable URL: http://127.0.0.1:9091
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable __Len__: 11
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.postform.__type__: Map
+Oct  1 02:29:52.994[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.timeseconds: 0.000378614
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.__type__: Map
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.err: 
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.form.__type__: Map
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.testsuite.workdir: /home/igor/GolandProjects/playch-gateway/tests/api
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.datetime: 2022-10-01T02:29:52+03:00
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.__len__: 7
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result: {TimeSeconds:0.000378614 StatusCode:400 Request:{Method:POST URL:http://127.0.0.1:9091/api/v1/login Header:map[Content-Type:[application/json]] Body: Form:map[] PostForm:map[]} Body:{"error":"EOF"} BodyJSON:map[error:EOF] Headers:map[Content-Length:15 Content-Type:application/json; charset=utf-8 Date:Fri, 30 Sep 2022 23:29:52 GMT] Err:}
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.form.__len__: 0
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers.content-length: 15
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.__type__: Result
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable : {"":"{\"API_VER\":\"v1\",\"AUTH_STORAGE_DNS\":\"postgresql://postgres:postgres@localhost:49154/auth_db\",\"URL\":\"http://127.0.0.1:9091\"}","API_VER":"v1","AUTH_STORAGE_DNS":"postgresql://postgres:postgres@localhost:49154/auth_db","URL":"http://127.0.0.1:9091","__Len__":"3","__Type__":"Map","venom.datetime":"2022-10-01T02:29:52+03:00","venom.testsuite":"Auth tests","venom.testsuite.filename":"tests/api/api.yml","venom.testsuite.shortName":"Auth tests","venom.testsuite.workdir":"/home/igor/GolandProjects/playch-gateway/tests/api","venom.timestamp":"1664580592"}
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.statuscode: 400
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.form: map[]
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.content-type.content-type0: application/json
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.__len__: 1
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.body: 
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers.__type__: Map
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.timestamp: 1664580592
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.body: {"error":"EOF"}
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers.date: Fri, 30 Sep 2022 23:29:52 GMT
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.postform: map[]
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.bodyjson.__len__: 1
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.__len__: 6
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.testsuite.shortName: Auth tests
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable venom.testcase: Test-login
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers: map[Content-Length:15 Content-Type:application/json; charset=utf-8 Date:Fri, 30 Sep 2022 23:29:52 GMT]
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.header.content-type: [application/json]
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.request.__type__: HTTPRequest
+Oct  1 02:29:52.995[37m [DEBU] [Auth tests] [Test-login] [0mRunning testcase with variable Authentification-Test-registration.result.headers.__len__: 3
+Oct  1 02:29:52.999[36m [INFO] [Auth tests] [Test-login] [0mStep #0 content is: "{\"assertions\":[\"result.statuscode ShouldEqual 200\"],\"headers\":{\"Content-Type\":\"application/json\"},\"info\":\"request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}\",\"method\":\"POST\",\"type\":\"http\",\"url\":\"http://127.0.0.1:9091/api/v1/login\"}"
+Oct  1 02:29:52.999[37m [DEBU] [Auth tests] [Test-login] [http] [0mresult of runTestStepExecutor: {TimeSeconds:0.000447073 StatusCode:400 Request:{Method:POST URL:http://127.0.0.1:9091/api/v1/login Header:map[Content-Type:[application/json]] Body: Form:map[] PostForm:map[]} Body:{"error":"EOF"} BodyJSON:map[error:EOF] Headers:map[Content-Length:15 Content-Type:application/json; charset=utf-8 Date:Fri, 30 Sep 2022 23:29:52 GMT] Err:}
+Oct  1 02:29:53.000[36m [INFO] [Auth tests] [Test-login] [http] [0mrequest is POST http://127.0.0.1:9091/api/v1/login  (tests/api/api.yml:43) (tests/api/api.yml:43)
+Oct  1 02:29:53.000[33m [WARN] [Auth tests] [Test-login] [0m[33mTestcase "Test login", step #0: Assertion "result.statuscode ShouldEqual 200" failed. expected: 200  got: 400 (tests/api/api.yml:45)[0m
+Oct  1 02:29:53.000[36m [INFO] [Auth tests] [Test-login] [0mEnding testcase
+Oct  1 02:29:53.000[36m [INFO] [Auth tests] [0mEnding testsuite

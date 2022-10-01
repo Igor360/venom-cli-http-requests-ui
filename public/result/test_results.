@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites>
+  <testsuite failures="2" name="Auth tests" package="tests/api/api.yml" tests="2">
+    <testcase classname="tests/api/api.yml" name="Authentification-Test-registration" time="0.010092763">
+      <failure><![CDATA[[33mTestcase "Authentification - Test registration", step #2: failed to connect to database: dial tcp 127.0.0.1:5432: connect: connection refused (tests/api/api.yml:30)[0m]]></failure>
+      <system-out></system-out>
+      <system-err></system-err>
+    </testcase>
+    <testcase classname="tests/api/api.yml" name="Test-login" time="0.005771908">
+      <failure><![CDATA[[33mTestcase "Test login", step #0: Assertion "result.statuscode ShouldEqual 200" failed. expected: 200  got: 400 (tests/api/api.yml:45)[0m]]></failure>
+      <system-out></system-out>
+      <system-err></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
