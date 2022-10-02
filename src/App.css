@@ -36,3 +36,26 @@
 		transform: rotate(360deg);
 	}
 }
+
+pre {
+	page-break-inside: avoid;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.pre {
+	background: #f4f4f4;
+	border: 1px solid #ddd;
+	border-left: 3px solid #73af2c;
+	color: #666;
+	font-family: monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	padding: 1em 1.5em;
+	display: block;
+	overflow: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}

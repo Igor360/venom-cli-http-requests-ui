@@ -137,7 +137,7 @@
  },
  "result": {
   "timeseconds": 0.000447073,
-  "statuscode": 200,
+  "statuscode": 500,
   "request": {
    "method": "GET",
    "url": "http://127.0.0.1:9091/api/v1/login",

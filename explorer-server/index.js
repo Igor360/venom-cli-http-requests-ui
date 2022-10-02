@@ -49,6 +49,7 @@ function filterData(api) {
         testSuite.push({
             url: element.step.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, ""),
             method: element.step.method,
+            code: element.result.statuscode,
             result: element.result, name: element.variables["venom.testcase"],
             info: element.step.info || ""
         });
@@ -63,11 +64,15 @@ function filterData(api) {
         groupedData[element[0]] = testSuite;
     });
 
-    // Group data by Methods
+    // Group data by Methods and status code, it's bad code...
     Object.entries(groupedData).forEach((element) => {
         let testSuite = groupedData[element[0]] || [];
         Object.entries(testSuite[0]).forEach(element2 => {
-            testSuite[0][element2[0]] = groupBy(testSuite[0][element2[0]], "method");
+            let groupedByMethod = groupBy(testSuite[0][element2[0]], "method");
+            Object.entries(groupedByMethod).forEach(element3 => {
+                groupedByMethod[element3[0]] = groupBy(groupedByMethod[element3[0]], "code");
+            })
+            testSuite[0][element2[0]] = groupedByMethod;
         })
         groupedData[element[0]] = testSuite;
     });
