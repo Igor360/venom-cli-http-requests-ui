@@ -1,53 +1,49 @@
 {
- "variables": {
-  "": "{\"\":\"{\\\"\\\":\\\"{\\\\\\\"API_VER\\\\\\\":\\\\\\\"v1\\\\\\\",\\\\\\\"AUTH_STORAGE_DNS\\\\\\\":\\\\\\\"postgresql://postgres:postgres@localhost:49154/auth_db\\\\\\\",\\\\\\\"URL\\\\\\\":\\\\\\\"http://127.0.0.1:9091\\\\\\\"}\\\",\\\"API_VER\\\":\\\"v1\\\",\\\"AUTH_STORAGE_DNS\\\":\\\"postgresql://postgres:postgres@localhost:49154/auth_db\\\",\\\"URL\\\":\\\"http://127.0.0.1:9091\\\",\\\"__Len__\\\":\\\"3\\\",\\\"__Type__\\\":\\\"Map\\\",\\\"venom.datetime\\\":\\\"2022-10-01T02:29:52+03:00\\\",\\\"venom.testsuite\\\":\\\"Auth tests\\\",\\\"venom.testsuite.filename\\\":\\\"tests/api/api.yml\\\",\\\"venom.testsuite.shortName\\\":\\\"Auth tests\\\",\\\"venom.testsuite.workdir\\\":\\\"/home/igor/GolandProjects/playch-gateway/tests/api\\\",\\\"venom.timestamp\\\":\\\"1664580592\\\"}\",\"API_VER\":\"v1\",\"AUTH_STORAGE_DNS\":\"postgresql://postgres:postgres@localhost:49154/auth_db\",\"URL\":\"http://127.0.0.1:9091\",\"__Len__\":\"11\",\"__Type__\":\"Map\",\"venom.datetime\":\"2022-10-01T02:29:52+03:00\",\"venom.testcase\":\"Authentification-Test-registration\",\"venom.testsuite\":\"Auth tests\",\"venom.testsuite.filename\":\"tests/api/api.yml\",\"venom.testsuite.shortName\":\"Auth tests\",\"venom.testsuite.workdir\":\"/home/igor/GolandProjects/playch-gateway/tests/api\",\"venom.timestamp\":\"1664580592\"}",
-  "API_VER": "v1",
-  "AUTH_STORAGE_DNS": "postgresql://postgres:postgres@localhost:49154/auth_db",
-  "URL": "http://127.0.0.1:9091",
-  "__Len__": "12",
-  "__Type__": "Map",
-  "venom.datetime": "2022-10-01T02:29:52+03:00",
-  "venom.testcase": "Authentification-Test-registration",
-  "venom.testsuite": "Auth tests",
-  "venom.testsuite.filename": "tests/api/api.yml",
-  "venom.testsuite.shortName": "Auth tests",
-  "venom.testsuite.workdir": "/home/igor/GolandProjects/playch-gateway/tests/api",
-  "venom.timestamp": "1664580592"
- },
- "step": {
-  "assertions": [
-   "result.statuscode ShouldEqual 400"
-  ],
-  "bodyFile": "./http/register.json",
-  "headers": {
-   "Content-Type": "application/json"
-  },
-  "info": "request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}",
-  "method": "POST",
-  "type": "http",
-  "url": "http://127.0.0.1:9091/api/v1/registration"
- },
- "result": {
-  "timeseconds": 0.001266023,
-  "statuscode": 400,
-  "request": {
-   "method": "POST",
-   "url": "http://127.0.0.1:9091/api/v1/registration",
-   "headers": {
-    "Content-Type": [
-     "application/json"
-    ]
-   },
-   "body": "{\n  \"password\": \"1234\",\n  \"firstName\": \"test\",\n  \"lastName\": \"tester\",\n  \"email\": \"tester@mail.com\",\n  \"username\": \"tester1\"\n}\n"
-  },
-  "body": "{\"error\":\"connection error: desc = \\\"transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving\\\"\"}",
-  "bodyjson": {
-   "error": "connection error: desc = \"transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving\""
-  },
-  "headers": {
-   "Content-Length": "138",
-   "Content-Type": "application/json; charset=utf-8",
-   "Date": "Fri, 30 Sep 2022 23:29:52 GMT"
-  }
- }
+	"variables": {
+		"": "{\"\":\"{\\\"\\\":\\\"{\\\\\\\"API_VER\\\\\\\":\\\\\\\"v1\\\\\\\",\\\\\\\"AUTH_STORAGE_DNS\\\\\\\":\\\\\\\"postgresql://postgres:postgres@localhost:49154/auth_db\\\\\\\",\\\\\\\"URL\\\\\\\":\\\\\\\"http://127.0.0.1:9091\\\\\\\"}\\\",\\\"API_VER\\\":\\\"v1\\\",\\\"AUTH_STORAGE_DNS\\\":\\\"postgresql://postgres:postgres@localhost:49154/auth_db\\\",\\\"URL\\\":\\\"http://127.0.0.1:9091\\\",\\\"__Len__\\\":\\\"3\\\",\\\"__Type__\\\":\\\"Map\\\",\\\"venom.datetime\\\":\\\"2022-10-01T02:29:52+03:00\\\",\\\"venom.testsuite\\\":\\\"Auth tests\\\",\\\"venom.testsuite.filename\\\":\\\"tests/api/api.yml\\\",\\\"venom.testsuite.shortName\\\":\\\"Auth tests\\\",\\\"venom.testsuite.workdir\\\":\\\"/home/igor/GolandProjects/playch-gateway/tests/api\\\",\\\"venom.timestamp\\\":\\\"1664580592\\\"}\",\"API_VER\":\"v1\",\"AUTH_STORAGE_DNS\":\"postgresql://postgres:postgres@localhost:49154/auth_db\",\"URL\":\"http://127.0.0.1:9091\",\"__Len__\":\"11\",\"__Type__\":\"Map\",\"venom.datetime\":\"2022-10-01T02:29:52+03:00\",\"venom.testcase\":\"Authentification-Test-registration\",\"venom.testsuite\":\"Auth tests\",\"venom.testsuite.filename\":\"tests/api/api.yml\",\"venom.testsuite.shortName\":\"Auth tests\",\"venom.testsuite.workdir\":\"/home/igor/GolandProjects/playch-gateway/tests/api\",\"venom.timestamp\":\"1664580592\"}",
+		"API_VER": "v1",
+		"AUTH_STORAGE_DNS": "postgresql://postgres:postgres@localhost:49154/auth_db",
+		"URL": "http://127.0.0.1:9091",
+		"__Len__": "12",
+		"__Type__": "Map",
+		"venom.datetime": "2022-10-01T02:29:52+03:00",
+		"venom.testcase": "Authentification-Test-registration",
+		"venom.testsuite": "Auth tests",
+		"venom.testsuite.filename": "tests/api/api.yml",
+		"venom.testsuite.shortName": "Auth tests",
+		"venom.testsuite.workdir": "/home/igor/GolandProjects/playch-gateway/tests/api",
+		"venom.timestamp": "1664580592"
+	},
+	"step": {
+		"assertions": ["result.statuscode ShouldEqual 400"],
+		"bodyFile": "./http/register.json",
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"info": "request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}",
+		"method": "POST",
+		"type": "http",
+		"url": "http://127.0.0.1:9091/api/v1/registration"
+	},
+	"result": {
+		"timeseconds": 0.001266023,
+		"statuscode": 400,
+		"request": {
+			"method": "POST",
+			"url": "http://127.0.0.1:9091/api/v1/registration",
+			"headers": {
+				"Content-Type": ["application/json"]
+			},
+			"body": "{\n  \"password\": \"1234\",\n  \"firstName\": \"test\",\n  \"lastName\": \"tester\",\n  \"email\": \"tester@mail.com\",\n  \"username\": \"tester1\"\n}\n"
+		},
+		"body": "{\"error\":\"connection error: desc = \\\"transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving\\\"\"}",
+		"bodyjson": {
+			"error": "connection error: desc = \"transport: Error while dialing dial tcp: lookup auth-service on 127.0.0.11:53: server misbehaving\""
+		},
+		"headers": {
+			"Content-Length": "138",
+			"Content-Type": "application/json; charset=utf-8",
+			"Date": "Fri, 30 Sep 2022 23:29:52 GMT"
+		}
+	}
 }

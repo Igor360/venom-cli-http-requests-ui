@@ -2,8 +2,7 @@
 
 ## Tech Stack
 
-**Server:** Venom CLI <= 1.0.1, Docker, Docker Compose, Node js 
-
+**Server:** Venom CLI <= 1.0.1, Docker, Docker Compose, Node js
 
 ## Creation Dump
 
@@ -16,7 +15,3 @@ venom run tests/api/api.yml -vv --output-dir ./result
 ## Related
 
 [Venom repository](https://github.com/ovh/venom)
-
-
-
-
