@@ -1,4 +1,4 @@
-import {LinkIcon, ExclamationCircleIcon, ArrowDownCircleIcon, CheckCircleIcon, ArrowRightCircleIcon} from '@heroicons/react/20/solid';
+import {LinkIcon, ExclamationCircleIcon, ArrowDownCircleIcon, CheckCircleIcon, ArrowRightCircleIcon, ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/20/solid';
 import {config} from "./configs/config";
 import {useEffect, useState, Fragment} from "react";
 import {toast} from "react-toastify";
@@ -115,7 +115,7 @@ export default function App() {
             <div className="bg-green-500 rounded mt-10 mb-10">
                 <div className="mx-auto max-w-1xl py-4 px-4 sm:px-6 lg:px-1">
                     <input
-                        className="bg-green-600 appearance-none border-2 border-green-600 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-green-500 focus:border-purple-500 placeholder-white"
+                        className="bg-green-600 appearance-none border-2 border-green-600 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-green-500 focus:border-green-400 placeholder-green-500"
                         type="text" placeholder="API URL" onChange={filterData}/>
                 </div>
             </div>
@@ -130,178 +130,206 @@ export default function App() {
                             <dl>
 
                                 {Object.keys(API.data[value][0]).map(url => (
-                                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-2 sm:px-5">
-                                        <dt className="text-2xl font-bold w-full bg-gray-300 rounded px-2 py-2 text-gray-400 sm:col-span-3">
-                                            <ArrowRightCircleIcon
-                                            className="absolute h-8 w-8 text-gray-400"
-                                            aria-hidden="true"
-                                            /> <span className="px-10">/{url}</span></dt>
-                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-4 sm:mt-0">
+                                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-2 sm:px-5 border-b border-gray-200">
 
 
-                                            {Object.keys(API.data[value][0][url]).map(method => (
-                                                <div className="border-t border-gray-200">
-                                                    <dl>
-                                                        <div
-                                                            className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                            <dt className="text-sm font-medium text-gray-500">METHOD</dt>
-                                                            <dd className="mt-1 text-lg font-medium text-red-400 sm:col-span-2 sm:mt-0">{method}</dd>
-                                                        </div>
-                                                        <div
-                                                            className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                            <dt className="text-sm font-medium text-gray-500">Name</dt>
-                                                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{Object.values(API.data[value][0][url][method])[0][0].name || ""}</dd>
-                                                        </div>
-                                                        <div
-                                                            className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                            <dt className="text-sm font-medium text-gray-500">Description</dt>
-                                                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{Object.values(API.data[value][0][url][method])[0][0].info || ""}}</dd>
-                                                        </div>
-                                                        <div
-                                                            className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                            <dt className="text-sm font-medium text-gray-500">RESPONSES</dt>
-                                                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+
+                                        <Disclosure>
+
+                                            {({ open }) => (
+
+                                            <>
+                                            <Disclosure.Button className="text-2xl text-left w-full bg-gray-300 rounded px-2 py-2 text-gray-400 sm:col-span-3">
+                                                <dt className="flex justify-between">
+                                                    <ArrowRightCircleIcon
+                                                        className="inline h-8 w-8 text-gray-400"
+                                                        aria-hidden="true"
+                                                    /> <span>/{url} <span className="font-thin ml-2">{Object.values(Object.values(API.data[value][0][url])[0])[0][0]["name"] || ""}</span></span>
+
+                                                        {open ?  <ChevronUpIcon
+                                                            className="inline animate-pulse right-0 h-8 w-8 text-gray-400"
+                                                            aria-hidden="true"
+                                                        /> : <ChevronDownIcon
+                                                            className="inline animate-pulse text-right h-8 w-8 text-gray-400"
+                                                            aria-hidden="true" /> }
+                                                </dt>
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel
+                                                className="mt-1 text-sm text-gray-900 sm:col-span-4 sm:mt-0">
+
+                                                <dd className="">
 
 
-                                                                <Tab.Group>
-                                                                    <Tab.List>
-                                                                        {Object.keys(API.data[value][0][url][method]).map(code => (
+                                                    {Object.keys(API.data[value][0][url]).map(method => (
+                                                        <div className="border-t border-gray-200">
+                                                            <dl>
+                                                                <div
+                                                                    className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                    <dt className="text-sm font-medium text-gray-500">METHOD</dt>
+                                                                    <dd className="mt-1 text-lg font-medium text-red-400 sm:col-span-2 sm:mt-0">{method}</dd>
+                                                                </div>
+                                                                <div
+                                                                    className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                    <dt className="text-sm font-medium text-gray-500">Name</dt>
+                                                                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{Object.values(API.data[value][0][url][method])[0][0].name || ""}</dd>
+                                                                </div>
+                                                                <div
+                                                                    className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                    <dt className="text-sm font-medium text-gray-500">Description</dt>
+                                                                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{Object.values(API.data[value][0][url][method])[0][0].info || ""}}</dd>
+                                                                </div>
+                                                                <div
+                                                                    className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                    <dt className="text-sm font-medium text-gray-500">RESPONSES</dt>
+                                                                    <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 
-                                                                            <Tab
-                                                                                as={Fragment}
-                                                                                className={`inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 m-2`}>
-                                                                                {({selected}) => (
-                                                                                    <span>
+
+                                                                        <Tab.Group>
+                                                                            <Tab.List>
+                                                                                {Object.keys(API.data[value][0][url][method]).map(code => (
+
+                                                                                    <Tab
+                                                                                        as={Fragment}
+                                                                                        className={`inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 m-2`}>
+                                                                                        {({selected}) => (
+                                                                                            <span>
                                                                                          { selected ? ( <CheckCircleIcon
-                                                                                        className="h-5 w-5 flex-shrink-2 text-gray-400 mr-3"
-                                                                                        aria-hidden="true"
-                                                                                    />) : ""} {code}
+                                                                                             className="h-5 w-5 flex-shrink-2 text-gray-400 mr-3"
+                                                                                             aria-hidden="true"
+                                                                                         />) : ""} {code}
                                                                                     </span>
-                                                                                )}
-                                                                            </Tab>
+                                                                                        )}
+                                                                                    </Tab>
 
 
-                                                                        ))}
-                                                                    </Tab.List>
-                                                                    <Tab.Panels>
-                                                                        {Object.keys(API.data[value][0][url][method]).map(code => (
-                                                                            <Tab.Panel
-                                                                                className={`items-center justify-center rounded-md ${codeBg[code] || "bg-indigo-500"} text-white px-4 py-2`}>
+                                                                                ))}
+                                                                            </Tab.List>
+                                                                            <Tab.Panels>
+                                                                                {Object.keys(API.data[value][0][url][method]).map(code => (
+                                                                                    <Tab.Panel
+                                                                                        className={`items-center justify-center rounded-md ${codeBg[code] || "bg-indigo-500"} text-white px-4 py-2`}>
 
 
-                                                                                {API.data[value][0][url][method][code].map((res, index) => (
+                                                                                        {API.data[value][0][url][method][code].map((res, index) => (
 
 
-                                                                                    <Disclosure>
-                                                                                        <Disclosure.Button
-                                                                                            className="block justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mb-2 mt-2 rounded items-center">
-                                                                                            Result [{index}]
-                                                                                        </Disclosure.Button>
-                                                                                        <Disclosure.Panel
-                                                                                            className="text-white">
-                                                                                            <div
-                                                                                                className="mb-2 border-t border-dashed">
-                                                                                                <dl>
+                                                                                            <Disclosure>
+                                                                                                <Disclosure.Button
+                                                                                                    className="block justify-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mb-2 mt-2 rounded items-center">
+                                                                                                    Result [{index}]
+                                                                                                </Disclosure.Button>
+                                                                                                <Disclosure.Panel
+                                                                                                    className="text-white">
                                                                                                     <div
-                                                                                                        className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                                                                        <dt className="text-sm font-medium text-white">Request:</dt>
-                                                                                                        <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
+                                                                                                        className="mb-2 border-t border-dashed">
+                                                                                                        <dl>
+                                                                                                            <div
+                                                                                                                className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                                                                <dt className="text-sm font-medium text-white">Request:</dt>
+                                                                                                                <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
                                                                                                             <span
                                                                                                                 className="block text-sm font-medium border-b border-gray-200 mb-2">[{(res.result.request.method)}] {(res.result.request.url)} - {(res.result.timeseconds)}s </span>
-                                                                                                            <span
-                                                                                                                className="block text-sm font-medium mb-2">
+                                                                                                                    <span
+                                                                                                                        className="block text-sm font-medium mb-2">
                                                                                                             HEADERS:
                                                                                                             </span>
-                                                                                                            <pre><code
-                                                                                                                className="block pre bg-gray-600 px-6 py-2 rounded">
+                                                                                                                    <pre><code
+                                                                                                                        className="block pre bg-gray-600 px-6 py-2 rounded">
                                                                                                             {JSON.stringify(res.result.request.headers)}
                                                                                                             </code>
                                                                                                                 </pre>
 
-                                                                                                            JSON Tree:
-                                                                                                            <JSONTree data={res.result.request.headers || {} } />
+                                                                                                                    JSON Tree:
+                                                                                                                    <JSONTree data={res.result.request.headers || {} } />
 
-                                                                                                            <span
-                                                                                                                className="block text-sm font-medium mb-2">
+                                                                                                                    <span
+                                                                                                                        className="block text-sm font-medium mb-2">
                                                                                                             BODY:
                                                                                                             </span>
-                                                                                                            <pre>
+                                                                                                                    <pre>
                                                                                                             <code
                                                                                                                 className="block pre bg-gray-700 px-6 py-2 rounded">
                                                                                                                 {res.result.request.body || "None"}
                                                                                                             </code>
                                                                                                             </pre>
 
-                                                                                                            JSON Tree:
-                                                                                                            <JSONTree data={JSON.parse(res.result.request.body || "{}" )} />
-                                                                                                        </dd>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-2 sm:px-6">
-                                                                                                        <dd className="flex justify-center mt-1 text-sm text-white">
-                                                                                                            <ArrowDownCircleIcon
-                                                                                                                className="h-8 w-8 flex-shrink-2 text-gray-400"
-                                                                                                                aria-hidden="true"
-                                                                                                            />
-                                                                                                        </dd>
-                                                                                                    </div>
+                                                                                                                    JSON Tree:
+                                                                                                                    <JSONTree data={JSON.parse(res.result.request.body || "{}" )} />
+                                                                                                                </dd>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-2 sm:px-6">
+                                                                                                                <dd className="flex justify-center mt-1 text-sm text-white">
+                                                                                                                    <ArrowDownCircleIcon
+                                                                                                                        className="h-8 w-8 flex-shrink-2 text-gray-400"
+                                                                                                                        aria-hidden="true"
+                                                                                                                    />
+                                                                                                                </dd>
+                                                                                                            </div>
 
-                                                                                                    <div
-                                                                                                        className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                                                                                        <dt className="text-sm font-medium text-white">Response:</dt>
-                                                                                                        <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
+                                                                                                            <div
+                                                                                                                className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                                                                                                <dt className="text-sm font-medium text-white">Response:</dt>
+                                                                                                                <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
 
                                                                                                               <span
                                                                                                                   className="block text-sm font-medium mb-2">  CODE: {(res.result.statuscode)}  </span>
 
-                                                                                                            <span
-                                                                                                                className="block text-sm font-medium mb-2">
+                                                                                                                    <span
+                                                                                                                        className="block text-sm font-medium mb-2">
                                                                                                             HEADERS:
                                                                                                             </span>
-                                                                                                            <pre><code
-                                                                                                                className="block pre bg-gray-600 px-6 py-2 rounded">
+                                                                                                                    <pre><code
+                                                                                                                        className="block pre bg-gray-600 px-6 py-2 rounded">
                                                                                                                 {JSON.stringify(res.result.headers)}
                                                                                                             </code></pre>
 
-                                                                                                            JSON Tree:
-                                                                                                            <JSONTree data={res.result.headers || {}} />
+                                                                                                                    JSON Tree:
+                                                                                                                    <JSONTree data={res.result.headers || {}} />
 
-                                                                                                            <span
-                                                                                                                className="block text-sm font-medium mb-2">
+                                                                                                                    <span
+                                                                                                                        className="block text-sm font-medium mb-2">
                                                                                                             BODY:
                                                                                                             </span>
-                                                                                                            <pre>  <code
-                                                                                                                className="block pre bg-gray-700 px-6 py-2 rounded">
+                                                                                                                    <pre>  <code
+                                                                                                                        className="block pre bg-gray-700 px-6 py-2 rounded">
                                                                                                                 {res.result.body || "None"}
                                                                                                             </code></pre>
 
-                                                                                                            JSON Tree:
-                                                                                                            <JSONTree data={res.result.bodyjson || {}} />
+                                                                                                                    JSON Tree:
+                                                                                                                    <JSONTree data={res.result.bodyjson || {}} />
 
 
-                                                                                                        </dd>
+                                                                                                                </dd>
+                                                                                                            </div>
+
+                                                                                                        </dl>
                                                                                                     </div>
-
-                                                                                                </dl>
-                                                                                            </div>
-                                                                                        </Disclosure.Panel>
-                                                                                    </Disclosure>
+                                                                                                </Disclosure.Panel>
+                                                                                            </Disclosure>
 
 
+                                                                                        ))}
+                                                                                    </Tab.Panel>
                                                                                 ))}
-                                                                            </Tab.Panel>
-                                                                        ))}
-                                                                    </Tab.Panels>
-                                                                </Tab.Group>
+                                                                            </Tab.Panels>
+                                                                        </Tab.Group>
 
-                                                            </dd>
+                                                                    </dd>
+                                                                </div>
+                                                            </dl>
                                                         </div>
-                                                    </dl>
-                                                </div>
-                                            ))}
+                                                    ))}
 
 
-                                        </dd>
+                                                </dd>
+
+                                            </Disclosure.Panel>
+                                            </>
+                                            )}
+                                            </Disclosure>
+
+
                                     </div>
                                 ))}
                             </dl>

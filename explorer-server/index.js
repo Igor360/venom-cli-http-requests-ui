@@ -30,7 +30,7 @@ const groupBy = (array, key) => {
 
 function getData() {
     let api = [];
-    const baseDir = __dirname + "/../public/result/";
+    const baseDir = __dirname + "/public/result/";
     const jsonsInDir = fs.readdirSync(baseDir).filter(file => path.extname(file) === '.json');
     jsonsInDir.forEach(file => {
         const fileData = fs.readFileSync(path.join(baseDir, file));
