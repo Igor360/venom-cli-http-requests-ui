@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+
+  test-ui:
+    image: igor368/venom-cli-requests-ui:v0.0.1
+    environment:
+      - PROJECT_NAME="TEST APP"
+      - PROJECT_DESCRIPTION=""
+    volumes:
+      - ../public/results:/code/results #It's important
+    ports:
+      - 8080:80
