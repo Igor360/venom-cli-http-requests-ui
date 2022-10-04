@@ -1,4 +1,4 @@
-TAG=v0.0.1
+TAG=v0.0.2
 # Docker hub configs
 DOCKER_HUB_PROJECT=igor368/venom-cli-requests-ui
 

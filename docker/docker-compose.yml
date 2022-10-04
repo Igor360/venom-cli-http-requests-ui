@@ -3,11 +3,13 @@ version: "3.9"
 services:
 
   test-ui:
-    image: igor368/venom-cli-requests-ui:v0.0.1
+    build:
+      context: ..
+      dockerfile: ./docker/server/node.Dockerfile
     environment:
-      - PROJECT_NAME="TEST APP"
-      - PROJECT_DESCRIPTION=""
+      - REACT_APP_PROJECT_NAME="TEST APP"
+      - REACT_APP_PROJECT_DESCRIPTION="It's test text only"
     volumes:
-      - ../public/results:/code/results #It's important
+      - ../public/results:/code/results # It's important,
     ports:
-      - 8080:80
+      - "8087:3002"

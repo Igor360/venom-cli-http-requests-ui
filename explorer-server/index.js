@@ -13,6 +13,14 @@ app.use(function (req, res, next) {
 	res.append('Access-Control-Allow-Headers', 'Content-Type');
 	next();
 });
+
+app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(express.static('public'));
+
+app.use((req, res, next) => {
+	res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
+
 app.use('/api', router);
 
 const groupBy = (array, key) => {
