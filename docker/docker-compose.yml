@@ -8,9 +8,9 @@ services:
 #      dockerfile: server/Dockerfile
     image: igor368/venom-cli-requests-ui:v0.0.2
     environment:
-      - REACT_APP_PROJECT_NAME="TEST APP111"
-      - REACT_APP_PROJECT_DESCRIPTION="It's test text only"
+      - REACT_APP_PROJECT_NAME=TEST APP111
+      - REACT_APP_PROJECT_DESCRIPTION=It's test text only
     volumes:
-      - ../public/results:/code/results # It's important,
+      - ../public/result/:/usr/src/app/explorer-server/public/result # It's important,
     ports:
-      - "8087:3002"
+      - "8088:3002"

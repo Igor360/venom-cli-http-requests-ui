@@ -28,7 +28,7 @@ services:
       - REACT_APP_PROJECT_NAME="TEST APP111"
       - REACT_APP_PROJECT_DESCRIPTION="It's test text only"
     volumes:
-      - ../public/results:/code/results # Link test result directory for parse them
+      - - ../public/result/:/usr/src/app/explorer-server/public/result # Link test result directory for parse them
     ports:
       - "8087:3002"
 ```
