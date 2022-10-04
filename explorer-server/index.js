@@ -14,13 +14,6 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.use(express.static(path.join(__dirname, '..', 'build')));
-app.use(express.static('public'));
-
-app.use((req, res, next) => {
-	res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
-});
-
 app.use('/api', router);
 
 const groupBy = (array, key) => {
@@ -95,6 +88,13 @@ router.get('/venom/results', async function (req, res, next) {
 		res.status(500).json({ error: e.message });
 		return;
 	}
+});
+
+app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(express.static('public'));
+
+app.use((req, res, next) => {
+	res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 3002, '0.0.0.0', function () {

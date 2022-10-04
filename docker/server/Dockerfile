@@ -1,14 +1,19 @@
-FROM node:12
-RUN mkdir /code
-WORKDIR /code
-ADD package*.json /code/
-ADD ./explorer-server/ /code
+FROM node:16
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Copy source code to image
+COPY . .
+
+WORKDIR /usr/src/app/explorer-server
 RUN npm i
 EXPOSE 3002
-COPY  ./build/ /code/public
-CMD ["/code/node_modules/.bin/babel-node", "index.js"]
 
-FROM nginx:alpine
-COPY ./docker/server/nginx.conf /etc/nginx/nginx.conf
-COPY  ./build/ /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+ADD package*.json /usr/src/app/
+
+# Install dependencies
+RUN npm install
+
+# Build app and start server from script
+CMD ["/usr/src/app/run"]

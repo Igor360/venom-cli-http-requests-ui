@@ -16,7 +16,8 @@ echo "===> User"
 id
 
 echo "===> Building ..."
-npm run build --production
+cd /usr/src/app/
+npm run build
 
 echo "===> Running ..."
 #exec serve -s build
