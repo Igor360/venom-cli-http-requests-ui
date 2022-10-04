@@ -94,11 +94,22 @@ export default function App() {
 				</div>
 			</div>
 
-			<div className="bg-green-400 rounded mb-10">
+			<div className="bg-green-500 rounded mt-1 mb-1">
+				<div className="mx-auto py-1 px-1">
+					<input
+						className="bg-green-600 appearance-none border-1 border-green-600 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-green-500 focus:border-green-400 placeholder-green-500 text-center"
+						type="text"
+						placeholder="API URL"
+						onChange={filterData}
+					/>
+				</div>
+			</div>
+
+			<div className="bg-green-400 rounded mb-1">
 				<div className="mx-auto max-w-1xl py-1 px-1 sm:px-6 lg:px-1"></div>
 			</div>
 
-			<div className="overflow-hidden bg-white shadow sm:rounded-lg">
+			<div className="overflow-hidden bg-green-400 shadow sm:rounded-lg mb-8">
 				<div className="px-4 py-5 sm:px-6">
 					<h3 className="text-lg font-medium leading-6 text-gray-900">Constants</h3>
 				</div>
@@ -116,16 +127,7 @@ export default function App() {
 				</div>
 			</div>
 
-			<div className="bg-green-500 rounded mt-10 mb-10">
-				<div className="mx-auto max-w-1xl py-4 px-4 sm:px-6 lg:px-1">
-					<input
-						className="bg-green-600 appearance-none border-2 border-green-600 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-green-500 focus:border-green-400 placeholder-green-500"
-						type="text"
-						placeholder="API URL"
-						onChange={filterData}
-					/>
-				</div>
-			</div>
+
 
 			{groups.map((value) => (
 				<div className="overflow-hidden bg-white shadow sm:rounded-lg mb-8">
@@ -356,6 +358,10 @@ export default function App() {
 					</div>
 				</div>
 			))}
+
+			<div className="bg-green-400 rounded mb-1">
+				<div className="mx-auto max-w-1xl py-1 px-1 sm:px-6 lg:px-1"></div>
+			</div>
 		</div>
 	);
 }
