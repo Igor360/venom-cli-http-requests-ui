@@ -43,11 +43,11 @@ vars:
   API_VER: "v1"
 
 testcases:
-  - name: "Registration"
+  - name: "GLOBALTAGFORSTEPS - Registration"
     tag: "Auth"
     steps:
       - type: http
-        tag: "Auth"
+        tag: "SPECIFICTAGFORSTEP"
         url: "{{.URL}}/api/{{.API_VER}}/registration"
         headers:
           Content-Type: "application/json"
