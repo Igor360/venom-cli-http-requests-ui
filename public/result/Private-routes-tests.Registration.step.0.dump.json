@@ -1,0 +1,55 @@
+{
+ "variables": {
+  "": "{\"\":\"{\\\"\\\":\\\"{\\\\\\\"API_VER\\\\\\\":\\\\\\\"v1\\\\\\\",\\\\\\\"AUTH_STORAGE_DNS\\\\\\\":\\\\\\\"host=localhost user=postgres password=postgres dbname=auth_db port=5432 sslmode=disable TimeZone=Asia/Shanghai\\\\\\\",\\\\\\\"URL\\\\\\\":\\\\\\\"http://127.0.0.1:9091\\\\\\\"}\\\",\\\"API_VER\\\":\\\"v1\\\",\\\"AUTH_STORAGE_DNS\\\":\\\"host=localhost user=postgres password=postgres dbname=auth_db port=5432 sslmode=disable TimeZone=Asia/Shanghai\\\",\\\"URL\\\":\\\"http://127.0.0.1:9091\\\",\\\"__Len__\\\":\\\"3\\\",\\\"__Type__\\\":\\\"Map\\\",\\\"venom.datetime\\\":\\\"2022-10-13T23:37:09+03:00\\\",\\\"venom.testsuite\\\":\\\"Private routes tests\\\",\\\"venom.testsuite.filename\\\":\\\"tests/api/api-private.yml\\\",\\\"venom.testsuite.shortName\\\":\\\"Private routes tests\\\",\\\"venom.testsuite.workdir\\\":\\\"/home/igor/GolandProjects/playch-gateway/tests/api\\\",\\\"venom.timestamp\\\":\\\"1665693429\\\"}\",\"API_VER\":\"v1\",\"AUTH_STORAGE_DNS\":\"host=localhost user=postgres password=postgres dbname=auth_db port=5432 sslmode=disable TimeZone=Asia/Shanghai\",\"URL\":\"http://127.0.0.1:9091\",\"__Len__\":\"11\",\"__Type__\":\"Map\",\"venom.datetime\":\"2022-10-13T23:37:09+03:00\",\"venom.testcase\":\"Registration\",\"venom.testsuite\":\"Private routes tests\",\"venom.testsuite.filename\":\"tests/api/api-private.yml\",\"venom.testsuite.shortName\":\"Private routes tests\",\"venom.testsuite.workdir\":\"/home/igor/GolandProjects/playch-gateway/tests/api\",\"venom.timestamp\":\"1665693429\"}",
+  "API_VER": "v1",
+  "AUTH_STORAGE_DNS": "host=localhost user=postgres password=postgres dbname=auth_db port=5432 sslmode=disable TimeZone=Asia/Shanghai",
+  "URL": "http://127.0.0.1:9091",
+  "__Len__": "12",
+  "__Type__": "Map",
+  "venom.datetime": "2022-10-13T23:37:09+03:00",
+  "venom.testcase": "Registration",
+  "venom.testsuite": "Private routes tests",
+  "venom.testsuite.filename": "tests/api/api-private.yml",
+  "venom.testsuite.shortName": "Private routes tests",
+  "venom.testsuite.workdir": "/home/igor/GolandProjects/playch-gateway/tests/api",
+  "venom.timestamp": "1665693429"
+ },
+ "step": {
+  "assertions": [
+   "result.statuscode ShouldEqual 201"
+  ],
+  "bodyFile": "./http/register.json",
+  "headers": {
+   "Content-Type": "application/json"
+  },
+  "info": "request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}",
+  "method": "POST",
+  "tag": "Auth",
+  "name": "Registrate user",
+  "type": "http",
+  "url": "http://127.0.0.1:9091/api/v1/registration"
+ },
+ "result": {
+  "timeseconds": 0.047542314,
+  "statuscode": 201,
+  "request": {
+   "method": "POST",
+   "url": "http://127.0.0.1:9091/api/v1/registration",
+   "headers": {
+    "Content-Type": [
+     "application/json"
+    ]
+   },
+   "body": "{\n  \"password\": \"1234\",\n  \"firstName\": \"test\",\n  \"lastName\": \"tester\",\n  \"email\": \"tester@mail.com\",\n  \"username\": \"tester1\"\n}\n"
+  },
+  "body": "{\"message\":201}",
+  "bodyjson": {
+   "message": 201
+  },
+  "headers": {
+   "Content-Length": "15",
+   "Content-Type": "application/json; charset=utf-8",
+   "Date": "Thu, 13 Oct 2022 20:37:09 GMT"
+  }
+ }
+}
