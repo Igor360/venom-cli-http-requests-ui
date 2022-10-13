@@ -23,7 +23,7 @@ services:
 #    build:
 #      context: ..
 #      dockerfile: server/Dockerfile
-    image: igor368/venom-cli-requests-ui:v0.0.2
+    image: igor368/venom-cli-requests-ui:v0.0.3
     environment:
       - REACT_APP_PROJECT_NAME="TEST APP111"
       - REACT_APP_PROJECT_DESCRIPTION="It's test text only"
