@@ -42,7 +42,8 @@ function filterData(api) {
     // Filter data
     let filteredData = {};
     api.forEach((element) => {
-        let key = element.step.tag !== undefined ? element.step.tag : element.variables['venom.testsuite'];
+        let groupName = element.variables['venom.testcase'].indexOf("-") >= 0 ? element.variables['venom.testcase'].split("-")[0] : element.variables['venom.testsuite'];
+        let key = element.step.tag !== undefined ? element.step.tag : groupName;
         let testSuite = filteredData[key] || [];
         testSuite.push({
             url: element.step.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, ''),

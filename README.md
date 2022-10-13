@@ -33,6 +33,75 @@ services:
       - "8087:3002"
 ```
 
+## Venom http config sample
+
+```yaml
+
+name: "Private routes tests"
+vars:
+  URL: "http://127.0.0.1"
+  API_VER: "v1"
+
+testcases:
+  - name: "Registration"
+    tag: "Auth"
+    steps:
+      - type: http
+        tag: "Auth"
+        url: "{{.URL}}/api/{{.API_VER}}/registration"
+        headers:
+          Content-Type: "application/json"
+        info: request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}
+        method: POST
+        bodyFile: "./http/register.json"
+        assertions:
+          - result.statuscode ShouldEqual 201
+      - type: http
+        tag: "Auth"
+        url: "{{.URL}}/api/{{.API_VER}}/registration"
+        headers:
+          Content-Type: "application/json"
+        method: POST
+        body: "{}"
+        assertions:
+          - result.statuscode ShouldEqual 400
+
+  - name: "Login"
+    steps:
+      - type: http
+        url: "{{.URL}}/api/{{.API_VER}}/login"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+        info: request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}
+        bodyFile: "./http/login.json"
+        assertions:
+          - result.statuscode ShouldEqual 200
+      - type: http
+        url: "{{.URL}}/api/{{.API_VER}}/login"
+        method: POST
+        headers:
+          Content-Type: "application/json"
+        body: "{}"
+        info: request is {{.result.request.method}} {{.result.request.url}} {{.result.request.body}}
+        assertions:
+          - result.statuscode ShouldEqual 400
+  - name: "Profile info"
+    steps:
+      - type: http
+        url: "{{.URL}}/api/{{.API_VER}}/profile"
+        method: GET
+        headers:
+          Content-Type: "application/json"
+          Authentication: "Bearer "
+        body: "{}"
+        info: Get user details
+        assertions:
+          - result.statuscode ShouldEqual 401
+
+
+```
+
 ## Related
 
 [Venom repository](https://github.com/ovh/venom)

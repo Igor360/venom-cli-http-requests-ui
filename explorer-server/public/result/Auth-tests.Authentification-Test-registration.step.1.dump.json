@@ -116,7 +116,7 @@
 		"result.statuscode": "400",
 		"result.timeseconds": "0.001266023",
 		"venom.datetime": "2022-10-01T02:29:52+03:00",
-		"venom.testcase": "Authentification-Test-login",
+		"venom.testcase": "login",
 		"venom.testsuite": "Auth tests",
 		"venom.testsuite.filename": "tests/api/api.yml",
 		"venom.testsuite.shortName": "Auth tests",

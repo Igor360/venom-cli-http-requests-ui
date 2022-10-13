@@ -116,7 +116,7 @@
 		"__Len__": "48",
 		"__Type__": "Map",
 		"venom.datetime": "2022-10-01T02:29:52+03:00",
-		"venom.testcase": "Test-login",
+		"venom.testcase": "login",
 		"venom.testsuite": "Auth tests",
 		"venom.testsuite.filename": "tests/api/api.yml",
 		"venom.testsuite.shortName": "Auth tests",
