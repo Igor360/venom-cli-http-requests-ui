@@ -344,7 +344,7 @@ export default function App() {
 																																	<pre>
 																																		<code className="block pre bg-gray-600 px-6 py-2 rounded">
 																																			{JSON.stringify(
-																																				res.result.headers,
+																																				res.result.headers || {},
 																																			)}
 																																		</code>
 																																	</pre>
