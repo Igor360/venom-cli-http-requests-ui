@@ -59,3 +59,19 @@ pre {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
+.pre-2 {
+	background: #f4f4f4;
+	border: 1px solid #ddd;
+	border-left: 3px solid #2ca3af;
+	color: #666;
+	font-family: monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 0.6em;
+	max-width: 100%;
+	padding: 1em 1.5em;
+	display: block;
+	overflow: auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}

@@ -45,8 +45,12 @@ function filterData(api) {
         let groupName = element.variables['venom.testcase'].indexOf("-") >= 0 ? element.variables['venom.testcase'].split("-")[0] : element.variables['venom.testsuite'];
         let key = element.step.tag !== undefined ? element.step.tag : groupName;
         let testSuite = filteredData[key] || [];
+        let rawURL = element.step.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, '')
+
+
         testSuite.push({
-            url: element.step.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, ''),
+            url: rawURL.split("?")[0],
+            params: rawURL.split("?")[1] !== undefined ? rawURL.split("?")[1].split("&") : [],
             method: element.step.method,
             code: element.result.statuscode,
             result: element.result,
