@@ -283,6 +283,15 @@ export default function App() {
                                                                                                                     className="text-white">
                                                                                                                     <div
                                                                                                                         className="mb-2 border-t border-dashed">
+
+                                                                                                                        {
+                                                                                                                            res.isAuth ? (
+                                                                                                                                <span className="block text-center py-2 px-2 bg-red-300 rounded-lg shadow-md mt-2">
+                                                                                                                                    <h5 className="font-bold dark:text-white">ATTENTION:
+                                                                                                                                        REQUIRED AUTHORIZATION </h5>
+                                                                                                                                </span>) : ""
+                                                                                                                        }
+
                                                                                                                         <dl>
                                                                                                                             <div
                                                                                                                                 className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -321,28 +330,31 @@ export default function App() {
                                                                                                                                         className="block text-sm font-medium mb-2">
                                                                                                                                         PARAMETERS:
 																																	</span>
-                                                                                                                                        {res.params ? res.params.map(param => (
-                                                                                                                                                <code className="block pre-2 bg-gray-800 px-6 py-1 rounded">{param}</code>)) :
-                                                                                                                                            (<code className="block pre-2 bg-gray-800 px-6 py-1 rounded">None</code>)}
-                                                                                                                                        <span
-                                                                                                                                            className="block text-sm font-medium mb-2">
+                                                                                                                                    {res.params ? res.params.map(param => (
+                                                                                                                                            <code
+                                                                                                                                                className="block pre-2 bg-gray-800 px-6 py-1 rounded">{param}</code>)) :
+                                                                                                                                        (
+                                                                                                                                            <code
+                                                                                                                                                className="block pre-2 bg-gray-800 px-6 py-1 rounded">None</code>)}
+                                                                                                                                    <span
+                                                                                                                                        className="block text-sm font-medium mb-2">
 																																		BODY:
 																																	</span>
-                                                                                                                                        <pre>
+                                                                                                                                    <pre>
 																																		<code
                                                                                                                                             className="block pre bg-gray-700 px-6 py-2 rounded">
 																																			{res.result.request.body ||
                                                                                                                                                 'None'}
 																																		</code>
 																																	</pre>
-                                                                                                                                        JSON
-                                                                                                                                        Tree:
-                                                                                                                                        <JSONTree
-                                                                                                                                            data={JSON.parse(
-                                                                                                                                                res.result.request.body ||
-                                                                                                                                                '{}',
-                                                                                                                                            )}
-                                                                                                                                        />
+                                                                                                                                    JSON
+                                                                                                                                    Tree:
+                                                                                                                                    <JSONTree
+                                                                                                                                        data={JSON.parse(
+                                                                                                                                            res.result.request.body ||
+                                                                                                                                            '{}',
+                                                                                                                                        )}
+                                                                                                                                    />
                                                                                                                                 </dd>
                                                                                                                             </div>
                                                                                                                             <div
@@ -363,10 +375,9 @@ export default function App() {
                                                                                                                                 <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
 																																	<span
                                                                                                                                         className="block text-sm font-medium mb-2">
-																																		{' '}
                                                                                                                                         CODE: {
                                                                                                                                         res.result.statuscode
-                                                                                                                                    }{' '}
+                                                                                                                                    }
 																																	</span>
                                                                                                                                     <span
                                                                                                                                         className="block text-sm font-medium mb-2">
@@ -408,38 +419,39 @@ export default function App() {
                                                                                                                 </Disclosure.Panel>
                                                                                                             </Disclosure>
                                                                                                         ),
-                                                                                                        )}
-                                                                                                        </Tab.Panel>
-                                                                                                        ),
-                                                                                                        )}
-                                                                                                </Tab.Panels>
-                                                                                            </Tab.Group>
-                                                                                            </dd>
-                                                                                            </div>
-                                                                                            </dl>
-                                                                                            </div>
-                                                                                            ))}
+                                                                                                    )}
+                                                                                                </Tab.Panel>
+                                                                                            ),
+                                                                                        )}
+                                                                                    </Tab.Panels>
+                                                                                </Tab.Group>
                                                                             </dd>
-                                                                        </Disclosure.Panel>
-                                                                    </>
-                                                                    )}
-                                                                </Disclosure>
+                                                                        </div>
+                                                                    </dl>
                                                                 </div>
-                                                                ))}
-                                                                </dl>
-                                                                </div>
-                                                                </div>
-                                                                ))
-                                                                ) : (
-                                                                <span className="block text-center mb-8">
-                                                                <span className="animate-pulse text-4xl font-thin text-gray-500 ">ROUTES NOT FOUND</span>
+                                                            ))}
+                                                        </dd>
+                                                    </Disclosure.Panel>
+                                                </>
+                                            )}
+                                        </Disclosure>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <span className="block text-center mb-8">
+                                                                <span
+                                                                    className="animate-pulse text-4xl font-thin text-gray-500 ">ROUTES NOT FOUND</span>
                                                                 </span>
-                                                                )}
+            )}
 
-                                                            <div className="bg-green-400 rounded mb-1">
-                                                                <div
-                                                                    className="mx-auto max-w-1xl py-1 px-1 sm:px-6 lg:px-1"></div>
-                                                            </div>
-                                                        </div>
-                                                        );
-                                                        }
+            <div className="bg-green-400 rounded mb-1">
+                <div
+                    className="mx-auto max-w-1xl py-1 px-1 sm:px-6 lg:px-1"></div>
+            </div>
+        </div>
+    );
+}

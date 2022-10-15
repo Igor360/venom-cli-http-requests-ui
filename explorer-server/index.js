@@ -52,6 +52,7 @@ function filterData(api) {
             url: rawURL.split("?")[0],
             params: rawURL.split("?")[1] !== undefined ? rawURL.split("?")[1].split("&") : [],
             method: element.step.method,
+            isAuth: element.step.headers !== undefined && element.step.headers.Authentication !== undefined,
             code: element.result.statuscode,
             result: element.result,
             name: element.variables['venom.testcase'],
