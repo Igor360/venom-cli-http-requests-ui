@@ -1,0 +1,101 @@
+{
+ "variables": {
+  "": "{\"\":\"{\\\"\\\":\\\"{\\\\\\\"URL\\\\\\\":\\\\\\\"http://127.0.0.1:8090\\\\\\\"}\\\",\\\"URL\\\":\\\"http://127.0.0.1:8090\\\",\\\"__Len__\\\":\\\"1\\\",\\\"__Type__\\\":\\\"Map\\\",\\\"venom.datetime\\\":\\\"2022-12-19T21:07:16+02:00\\\",\\\"venom.testsuite\\\":\\\"Debug backend for Gato project routes\\\",\\\"venom.testsuite.filename\\\":\\\"tests/api.yml\\\",\\\"venom.testsuite.shortName\\\":\\\"Debug backend for Gato project routes\\\",\\\"venom.testsuite.workdir\\\":\\\"/home/igor/Work/Projects/gato_debug_chain_ui/backend/tests\\\",\\\"venom.timestamp\\\":\\\"1671476836\\\"}\",\"URL\":\"http://127.0.0.1:8090\",\"__Len__\":\"9\",\"__Type__\":\"Map\",\"venom.datetime\":\"2022-12-19T21:07:16+02:00\",\"venom.testcase\":\"Transaction-test\",\"venom.testsuite\":\"Debug backend for Gato project routes\",\"venom.testsuite.filename\":\"tests/api.yml\",\"venom.testsuite.shortName\":\"Debug backend for Gato project routes\",\"venom.testsuite.workdir\":\"/home/igor/Work/Projects/gato_debug_chain_ui/backend/tests\",\"venom.timestamp\":\"1671476836\"}",
+  "URL": "http://127.0.0.1:8090",
+  "__Len__": "10",
+  "__Type__": "Map",
+  "venom.datetime": "2022-12-19T21:07:16+02:00",
+  "venom.testcase": "Transaction-test",
+  "venom.testsuite": "Debug backend for Gato project routes",
+  "venom.testsuite.filename": "tests/api.yml",
+  "venom.testsuite.shortName": "Debug backend for Gato project routes",
+  "venom.testsuite.workdir": "/home/igor/Work/Projects/gato_debug_chain_ui/backend/tests",
+  "venom.timestamp": "1671476836"
+ },
+ "step": {
+  "assertions": [
+   "result.statuscode ShouldEqual 200"
+  ],
+  "headers": {
+   "Content-Type": "application/json"
+  },
+  "info": "Get tx info",
+  "method": "GET",
+  "type": "http",
+  "url": "http://127.0.0.1:8090/transaction/0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00"
+ },
+ "result": {
+  "timeseconds": 1.440519608,
+  "statuscode": 200,
+  "request": {
+   "method": "GET",
+   "url": "http://127.0.0.1:8090/transaction/0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00",
+   "headers": {
+    "Content-Type": [
+     "application/json"
+    ]
+   }
+  },
+  "body": "{\"transaction\":{\"blockHash\":\"0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145\",\"blockNumber\":\"0x150e\",\"from\":\"0x5d4cdf1548ad7b60d472368ccf574f4632635903\",\"gas\":\"0x40dce58b\",\"gasPrice\":\"0x3b9aca00\",\"hash\":\"0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00\",\"input\":\"0x46ebbb69000000000000000000000000000000000000000000000000000000000000003c000000000000000000000000000000000000000000000002b5e3af16b1880000\",\"nonce\":\"0x6f3\",\"r\":\"0xde421f08b6864189c859f0e7b18f2b18d8b3468608a701b57b95c65b37ee56d\",\"s\":\"0x3e644cab3a940a7e35a801b5d1af12384a4dea8614eeabe039948ea19c4643c3\",\"to\":\"0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2\",\"token\":\"0x0000000000000000000000000000000000000000\",\"transactionIndex\":\"0x0\",\"type\":\"0x0\",\"v\":\"0x219f\",\"value\":\"0x0\"},\"TYPE\":\"STAKE_CLAIM\",\"KEY\":\"0x5354414b455f434c41494d\",\"transactionReceipt\":{\"blockHash\":\"0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145\",\"blockNumber\":\"0x150e\",\"contractAddress\":null,\"cumulativeGasUsed\":\"0x17949c343\",\"from\":\"0x5d4cdf1548ad7b60d472368ccf574f4632635903\",\"gasUsed\":\"0x17949c343\",\"logs\":[{\"address\":\"0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2\",\"blockHash\":\"0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145\",\"blockNumber\":\"0x150e\",\"data\":\"0x000000000000000000000000000000000000000000000002b5e3af16b1880000\",\"logIndex\":\"0x0\",\"removed\":false,\"topics\":[\"0xd8654fcc8cf5b36d30b3f5e4688fc78118e6d68de60b9994e09902268b57c3e3\",\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"0x0000000000000000000000005d4cdf1548ad7b60d472368ccf574f4632635903\"],\"transactionHash\":\"0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00\",\"transactionIndex\":\"0x0\"}],\"logsBloom\":\"0x00000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000100000800000000000000000000000000000000000000000000000000000000000002000004000000000000000001000000020000000000000000000020000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000020000000000000000000200000000000000000000000000000000000000000000000\",\"status\":\"0x1\",\"to\":\"0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2\",\"token\":\"0x0000000000000000000000000000000000000000\",\"transactionHash\":\"0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00\",\"transactionIndex\":\"0x0\",\"type\":\"0x0\"}}",
+  "bodyjson": {
+   "KEY": "0x5354414b455f434c41494d",
+   "TYPE": "STAKE_CLAIM",
+   "transaction": {
+    "blockHash": "0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145",
+    "blockNumber": "0x150e",
+    "from": "0x5d4cdf1548ad7b60d472368ccf574f4632635903",
+    "gas": "0x40dce58b",
+    "gasPrice": "0x3b9aca00",
+    "hash": "0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00",
+    "input": "0x46ebbb69000000000000000000000000000000000000000000000000000000000000003c000000000000000000000000000000000000000000000002b5e3af16b1880000",
+    "nonce": "0x6f3",
+    "r": "0xde421f08b6864189c859f0e7b18f2b18d8b3468608a701b57b95c65b37ee56d",
+    "s": "0x3e644cab3a940a7e35a801b5d1af12384a4dea8614eeabe039948ea19c4643c3",
+    "to": "0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2",
+    "token": "0x0000000000000000000000000000000000000000",
+    "transactionIndex": "0x0",
+    "type": "0x0",
+    "v": "0x219f",
+    "value": "0x0"
+   },
+   "transactionReceipt": {
+    "blockHash": "0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145",
+    "blockNumber": "0x150e",
+    "contractAddress": null,
+    "cumulativeGasUsed": "0x17949c343",
+    "from": "0x5d4cdf1548ad7b60d472368ccf574f4632635903",
+    "gasUsed": "0x17949c343",
+    "logs": [
+     {
+      "address": "0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2",
+      "blockHash": "0xfe63bb6db61b6adceb271cc5df89b7575003bc7aa0117c9161b9ba656536b145",
+      "blockNumber": "0x150e",
+      "data": "0x000000000000000000000000000000000000000000000002b5e3af16b1880000",
+      "logIndex": "0x0",
+      "removed": false,
+      "topics": [
+       "0xd8654fcc8cf5b36d30b3f5e4688fc78118e6d68de60b9994e09902268b57c3e3",
+       "0x0000000000000000000000000000000000000000000000000000000000000000",
+       "0x0000000000000000000000005d4cdf1548ad7b60d472368ccf574f4632635903"
+      ],
+      "transactionHash": "0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00",
+      "transactionIndex": "0x0"
+     }
+    ],
+    "logsBloom": "0x00000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000100000800000000000000000000000000000000000000000000000000000000000002000004000000000000000001000000020000000000000000000020000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000020000000000000000000200000000000000000000000000000000000000000000000",
+    "status": "0x1",
+    "to": "0xa0cc42dd452dc79d8b6198466c770f3c94ff15b2",
+    "token": "0x0000000000000000000000000000000000000000",
+    "transactionHash": "0x36ed778484ac774bb21e5bb7e29ae7dcc6c7a992506d475d3279a93fe36f6c00",
+    "transactionIndex": "0x0",
+    "type": "0x0"
+   }
+  },
+  "headers": {
+   "Content-Type": "application/json",
+   "Date": "Mon, 19 Dec 2022 19:07:18 GMT",
+   "Host": "127.0.0.1:8090",
+   "X-Powered-By": "PHP/8.1.13"
+  }
+ }
+}

@@ -34,7 +34,8 @@ export default function App() {
 
     const loadResults = async () => {
         try {
-            const res = await fetch('/api/venom/results');
+            const res = await fetch('http://localhost:3002/api/venom/results');
+            // const res = await fetch('/api/venom/results');
             const api = (await res.json()).api;
             setBaseURI(api.raw[0].variables.URL || 'localhost');
             setApiVer(api.raw[0].variables.API_VER || 'v1');
@@ -175,7 +176,7 @@ export default function App() {
                                             {({open}) => (
                                                 <>
                                                     <Disclosure.Button
-                                                        className="text-2xl text-left w-full bg-gray-300 rounded px-2 py-2 text-gray-400 sm:col-span-3">
+                                                        className="text-lg text-left w-full bg-gray-300 rounded px-2 py-2 text-gray-400 sm:col-span-3">
                                                         <dt className="flex justify-between">
                                                             <ArrowRightCircleIcon
                                                                 className="inline h-8 w-8 text-gray-400"
